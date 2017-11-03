@@ -90,7 +90,7 @@ export class Header extends Component {
                     }
                 </LeftNav>
                 <AppBar
-                  title="React-Redux-Flask"
+                  title="Priority Attachment: a Universal Mechanism for Generating Networks"
                   onLeftIconButtonTouchTap={() => this.openNav()}
                   iconElementRight={
                       <FlatButton label="Home" onClick={() => this.dispatchNewRoute('/')} />
