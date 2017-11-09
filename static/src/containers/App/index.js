@@ -5,10 +5,12 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 /* application components */
 import { Header } from '../../components/Header';
+import { Home } from '../../components/Home';
 import { Footer } from '../../components/Footer';
 
 /* global styles for app */
 import './styles/app.scss';
+
 
 class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
     static propTypes = {
@@ -20,15 +22,16 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
             <MuiThemeProvider muiTheme={getMuiTheme()}>
                 <section>
                     <Header />
-                    <div
-                      className="container"
-                      style={{ marginTop: 10, paddingBottom: 250 }}
-                    >
-                        {this.props.children}
-                    </div>
-                    <div>
-                        <Footer />
-                    </div>
+                    <Home />
+                    {/*<div*/}
+                      {/*className="container"*/}
+                      {/*style={{ margin: 0, padding: 0 , width: 100+"%"}}*/}
+                    {/*>*/}
+                        {/*{this.props.children}*/}
+                    {/*</div>*/}
+                    {/*<div>*/}
+                        {/*<Footer />*/}
+                    {/*</div>*/}
                 </section>
             </MuiThemeProvider>
         );

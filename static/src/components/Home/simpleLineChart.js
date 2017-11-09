@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, Legend} from 'recharts'
+import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, Legend, ResponsiveContainer} from 'recharts'
 
 
 const data = [
@@ -17,15 +17,18 @@ export default class SimpleLineChart extends React.Component{
 
     render () {
         return (
-            <LineChart width={300} height={200} data={data} margin={{top: 0, right: 0, left: 0, bottom: 5}}>
-                <XAxis dataKey="name"/>
-                <YAxis/>
-                <CartesianGrid strokeDasharray="3 3"/>
-                <Tooltip/>
-                <Legend />
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
-                <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-            </LineChart>
+            <ResponsiveContainer width='100%' height={200}>
+                <LineChart data={data}  margin={{top: 0, right: 16, left: 0, bottom: 0}}>
+                    <XAxis dataKey="name"/>
+                    <YAxis/>
+                    <CartesianGrid strokeDasharray="3 3"/>
+                    <Tooltip/>
+                    <Legend />
+                    <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
+                    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                </LineChart>
+            </ResponsiveContainer>
+
         );
     }
 }

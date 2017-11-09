@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React, {Component} from 'react';
+import {browserHistory} from 'react-router';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import AppBar from 'material-ui/AppBar';
 import LeftNav from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
@@ -65,37 +65,63 @@ export class Header extends Component {
     render() {
         return (
             <header>
-                <LeftNav open={this.state.open}>
-                    {
-                        !this.props.isAuthenticated ?
-                            <div>
-                                <MenuItem onClick={() => this.dispatchNewRoute('/login')}>
-                                    Login
-                                </MenuItem>
-                                <MenuItem onClick={() => this.dispatchNewRoute('/register')}>
-                                    Register
-                                </MenuItem>
-                            </div>
-                            :
-                            <div>
-                                <MenuItem onClick={() => this.dispatchNewRoute('/analytics')}>
-                                    Analytics
-                                </MenuItem>
-                                <Divider />
+                {/*<LeftNav open={this.state.open}>*/}
+                    {/*{*/}
+                        {/*!this.props.isAuthenticated ?*/}
+                            {/*<div>*/}
+                                {/*<MenuItem onClick={() => this.dispatchNewRoute('/login')}>*/}
+                                    {/*Login*/}
+                                {/*</MenuItem>*/}
+                                {/*<MenuItem onClick={() => this.dispatchNewRoute('/register')}>*/}
+                                    {/*Register*/}
+                                {/*</MenuItem>*/}
+                            {/*</div>*/}
+                            {/*:*/}
+                            {/*<div>*/}
+                                {/*<MenuItem onClick={() => this.dispatchNewRoute('/analytics')}>*/}
+                                    {/*Analytics*/}
+                                {/*</MenuItem>*/}
+                                {/*<Divider/>*/}
 
-                                <MenuItem onClick={(e) => this.logout(e)}>
-                                    Logout
-                                </MenuItem>
-                            </div>
-                    }
-                </LeftNav>
-                <AppBar
-                  title="Priority Attachment: a Universal Mechanism for Generating Networks"
-                  onLeftIconButtonTouchTap={() => this.openNav()}
-                  iconElementRight={
-                      <FlatButton label="Home" onClick={() => this.dispatchNewRoute('/')} />
-                    }
-                />
+                                {/*<MenuItem onClick={(e) => this.logout(e)}>*/}
+                                    {/*Logout*/}
+                                {/*</MenuItem>*/}
+                            {/*</div>*/}
+                    {/*}*/}
+                {/*</LeftNav>*/}
+                {/*<AppBar style={{position: 'fixed'}}*/}
+                        {/*title="Priority Attachment: a Universal Mechanism for Generating Networks"*/}
+                        {/*onLeftIconButtonTouchTap={() => this.openNav()}*/}
+                        {/*iconElementRight={*/}
+                            {/*<FlatButton label="Home" onClick={() => this.dispatchNewRoute('/')}/>*/}
+                        {/*}*/}
+                {/*/>*/}
+
+
+                <div className="w3-top">
+                    <div className="w3-bar w3-card w3-animate-top w3-white" id="myNavbar">
+                        <a className="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+                           href="javascript:void(0);" onClick={() => this.dispatchNewRoute('/')} title="Toggle Navigation Menu">
+                            <i className="fa fa-bars"></i>
+                        </a>
+                        <a href="#home" className="w3-bar-item w3-button">PRIORITY ATTACHMENT</a>
+                        <a href="#what" className="w3-bar-item w3-button w3-hide-small"><i className="fa fa-cog"></i>
+                            ABOUT</a>
+                        <a href="#how" className="w3-bar-item w3-button w3-hide-small"><i className="fa fa-file-text-o"></i>
+                            DESCRIPTION</a>
+                        <a href="#demo" className="w3-bar-item w3-button w3-hide-small"><i className="fa fa-line-chart"></i>
+                            DEMO</a>
+                        <a href="#contact" className="w3-bar-item w3-button w3-hide-small"><i className="fa fa-envelope"></i>
+                            CONTACT</a>
+                    </div>
+
+
+                    <div id="navDemo" className="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+                        <a href="#about" className="w3-bar-item w3-button" onClick={() => this.dispatchNewRoute('/')}>ABOUT</a>
+                        <a href="#portfolio" className="w3-bar-item w3-button" onClick={() => this.dispatchNewRoute('/')}>PORTFOLIO</a>
+                        <a href="#contact" className="w3-bar-item w3-button" onClick={() => this.dispatchNewRoute('/')}>CONTACT</a>
+                    </div>
+                </div>
             </header>
 
         );
@@ -106,3 +132,14 @@ Header.propTypes = {
     logoutAndRedirect: React.PropTypes.func,
     isAuthenticated: React.PropTypes.bool,
 };
+
+
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}

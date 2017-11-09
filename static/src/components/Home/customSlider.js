@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Slider from 'material-ui/Slider';
 
-const min = 0;
+const min = 10;
 const max = 1000;
 
 
@@ -18,17 +18,16 @@ export default class CustomSlider extends Component {
   render() {
     return (
       <div>
+        <span>{this.state.slider}</span>
         <Slider
           min={min}
           max={max}
           step={max / 100}
           value={this.state.slider}
+          defaultValue={50}
           onChange={this.handleSlider}
+          style={{margin: 0}}
         />
-        <p>
-          <span>{'The value of this slider is: '}</span>
-          <span>{this.state.slider}</span>
-        </p>
       </div>
     );
   }
