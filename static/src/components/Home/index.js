@@ -394,9 +394,10 @@ export const Home = () =>
                     <div className="w3-content w3-container w3-padding-64 w3-center">
                         <h3>PUBLICATION</h3>
                         <PdfIcon/>
-                        <p className="w3-center"> Mikołaj Morzy, Tomasz Kajdanowicz, Przemysław Kazienko, Grzegorz Miebs,
+                        <p className="w3-center"> Mikołaj Morzy, Tomasz Kajdanowicz, Przemysław Kazienko, Grzegorz
+                            Miebs,
                             and Arkadiusz Rusin, <em>Priority Attachment: a Universal Mechanism for Generating
-                            Networks</em>, in preparation, 2017</p>
+                                Networks</em>, in preparation, 2017</p>
                     </div>
                 </div>
             </div>
@@ -406,9 +407,14 @@ export const Home = () =>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="w3-content w3-container w3-padding-64 w3-center">
                         <h3>ACKNOWLEDGMENTS</h3>
-                            <p className="w3-center">
-                                This work was supported by the National Science Centre, Poland, Decisions nos. DEC-2016/23/B/ST6/03962, DEC-2016/21/B/ST6/01463, and DEC-2016/21/D/ST6/02948; European Union’s Horizon 2020 Research and Innovation Program under the Marie Skłodowska-Curie Grant Agreement no. 691152 (RENOIR); and the Polish Ministry of Science and Higher Education Fund for supporting internationally cofinanced projects in 2016–2019 (Agreement no. 3628/H2020/2016/2).
-                            </p>
+                        <p className="w3-center">
+                            This work was supported by the National Science Centre, Poland, Decisions nos.
+                            DEC-2016/23/B/ST6/03962, DEC-2016/21/B/ST6/01463, and DEC-2016/21/D/ST6/02948; European
+                            Union’s Horizon 2020 Research and Innovation Program under the Marie Skłodowska-Curie Grant
+                            Agreement no. 691152 (RENOIR); and the Polish Ministry of Science and Higher Education Fund
+                            for supporting internationally cofinanced projects in 2016–2019 (Agreement no.
+                            3628/H2020/2016/2).
+                        </p>
                     </div>
                 </div>
             </div>
