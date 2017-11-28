@@ -1,161 +1,13 @@
 import React from 'react';
 import Graph from 'react-graph-vis';
 import './styles.scss';
-import DropDownDistanceMenu from "./dropDownDistanceMenu";
+import DropDownDistanceMenu from "./dropDownDistanceMenuContainer";
 import SimpleLineChart from "./simpleLineChart";
-import CustomSlider from "./customSlider";
-import {RaisedButton} from "material-ui";
-// import ReactHeatmap from 'react-heatmap';
-// import CustomDistanceTable from "./customDistanceTable";
-// import CustomDistanceMatrix from "./customDistanceMatrix";
+import CustomSlider from "./customSliderContainer";
+import RaisedButton from './RaisedButtonContainer';
 import PdfIcon from 'react-icons/lib/fa/file-pdf-o'
-// import InlineMath from 'react-katex';
-import DistanceDescription from './distanceDescription'
-
-var graph = {
-    nodes: [
-        {id: 1, label: ''},
-        {id: 2, label: ''},
-        {id: 3, label: ''},
-        {id: 4, label: ''},
-        {id: 5, label: ''},
-        {id: 6, label: ''},
-        {id: 7, label: ''},
-        {id: 8, label: ''},
-        {id: 9, label: ''},
-        {id: 10, label: ''},
-        {id: 11, label: ''},
-        {id: 12, label: ''},
-        {id: 13, label: ''},
-        {id: 14, label: ''},
-        {id: 15, label: ''},
-        {id: 16, label: ''},
-        {id: 17, label: ''},
-        {id: 18, label: ''},
-        {id: 19, label: ''},
-        {id: 20, label: ''},
-        {id: 21, label: ''},
-        {id: 22, label: ''},
-        {id: 23, label: ''},
-        {id: 24, label: ''},
-        {id: 25, label: ''},
-        {id: 26, label: ''},
-        {id: 27, label: ''},
-        {id: 28, label: ''},
-        {id: 29, label: ''},
-        {id: 30, label: ''},
-        {id: 31, label: ''},
-        {id: 32, label: ''},
-        {id: 33, label: ''},
-        {id: 34, label: ''}
-    ],
-    edges: [
-        {from: 2, to: 1},
-        {from: 3, to: 1},
-        {from: 3, to: 2},
-        {from: 4, to: 1},
-        {from: 4, to: 2},
-        {from: 4, to: 3},
-        {from: 5, to: 1},
-        {from: 6, to: 1},
-        {from: 7, to: 1},
-        {from: 7, to: 5},
-        {from: 7, to: 6},
-        {from: 8, to: 1},
-        {from: 8, to: 2},
-        {from: 8, to: 3},
-        {from: 8, to: 4},
-        {from: 9, to: 1},
-        {from: 9, to: 3},
-        {from: 10, to: 3},
-        {from: 11, to: 1},
-        {from: 11, to: 5},
-        {from: 11, to: 6},
-        {from: 12, to: 1},
-        {from: 13, to: 1},
-        {from: 13, to: 4},
-        {from: 14, to: 1},
-        {from: 14, to: 2},
-        {from: 14, to: 3},
-        {from: 14, to: 4},
-        {from: 17, to: 6},
-        {from: 17, to: 7},
-        {from: 18, to: 1},
-        {from: 18, to: 2},
-        {from: 20, to: 1},
-        {from: 20, to: 2},
-        {from: 22, to: 1},
-        {from: 22, to: 2},
-        {from: 26, to: 24},
-        {from: 26, to: 25},
-        {from: 28, to: 3},
-        {from: 28, to: 24},
-        {from: 28, to: 25},
-        {from: 29, to: 3},
-        {from: 30, to: 24},
-        {from: 30, to: 27},
-        {from: 31, to: 2},
-        {from: 31, to: 9},
-        {from: 32, to: 1},
-        {from: 32, to: 25},
-        {from: 32, to: 26},
-        {from: 32, to: 29},
-        {from: 33, to: 3},
-        {from: 33, to: 9},
-        {from: 33, to: 15},
-        {from: 33, to: 16},
-        {from: 33, to: 19},
-        {from: 33, to: 21},
-        {from: 33, to: 23},
-        {from: 33, to: 24},
-        {from: 33, to: 30},
-        {from: 33, to: 31},
-        {from: 33, to: 32},
-        {from: 34, to: 9},
-        {from: 34, to: 10},
-        {from: 34, to: 14},
-        {from: 34, to: 15},
-        {from: 34, to: 16},
-        {from: 34, to: 19},
-        {from: 34, to: 20},
-        {from: 34, to: 21},
-        {from: 34, to: 23},
-        {from: 34, to: 24},
-        {from: 34, to: 27},
-        {from: 34, to: 28},
-        {from: 34, to: 29},
-        {from: 34, to: 30},
-        {from: 34, to: 31},
-        {from: 34, to: 32},
-        {from: 34, to: 33}
-    ]
-};
-
-var options = {
-    layout: {
-        hierarchical: false
-    },
-    edges: {
-        color: "#000000",
-        shadow: true,
-        smooth: true
-    },
-    nodes: {
-        shadow: true,
-        labelHighlightBold: true
-    },
-    autoResize: true
-
-};
-
-var events = {
-    select: function (event) {
-        var {nodes, edges} = event;
-    }
-};
-
-// var Graph = require('react-graph-vis');
-
+import DistanceDescription from './distanceDescriptionContainer'
+import CustomGRaph from "./customGraphContainer";
 
 export const Home = () =>
     <section className="container-fluid" style={{padding: 0, margin: 0}}>
@@ -342,7 +194,7 @@ export const Home = () =>
                 </div>
                 <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <DistanceDescription value={"degree"}/>
+                        <DistanceDescription/>
                         {/*<Tex texContent={"\\frac{1}{C_D(v_j) + \\epsilon}"}/>*/}
                         {/*<InlineMath math="\\frac{1}{C_D(v_j) + \\epsilon}" />*/}
                     </div>
@@ -354,7 +206,8 @@ export const Home = () =>
             <div className="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                 <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <Graph graph={graph} options={options} events={events} style={{height: "600px"}}/>
+                        {/*<Graph graph={graph} options={options} events={events} style={{height: "600px"}}/>*/}
+                        <CustomGRaph/>
                     </div>
                 </div>
             </div>

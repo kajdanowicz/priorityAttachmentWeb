@@ -1,5 +1,5 @@
 from flask import request, render_template, jsonify, url_for, redirect, g
-from .models import User
+from .models import User, Network
 from index import app, db
 from sqlalchemy.exc import IntegrityError
 from .utils.auth import generate_token, requires_auth, verify_token
@@ -62,3 +62,11 @@ def is_token_valid():
         return jsonify(token_is_valid=True)
     else:
         return jsonify(token_is_valid=False), 403
+
+
+@app.route("/api/generateNetwork", methods=["POST"])
+def generateNetwork():
+    incoming = request.get_json()
+
+    net = Network(size=incoming['size'], distance=incoming['distance'])
+    return jsonify(net.getNetwork())

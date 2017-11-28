@@ -7,28 +7,29 @@ const max = 1000;
 
 export default class CustomSlider extends Component {
 
-  state = {
-    slider: 50,
-  };
-
-  handleSlider = (event, value) => {
-    this.setState({slider: value});
+  handleSlider(event, value){
+    this.props.updateSlider(value)
   };
 
   render() {
     return (
       <div>
-        <span>{this.state.slider}</span>
+        <span>{this.props.size}</span>
         <Slider
           min={min}
           max={max}
           step={max / 100}
-          value={this.state.slider}
+          value={this.props.size}
           defaultValue={50}
-          onChange={this.handleSlider}
+          onChange={this.handleSlider.bind(this)}
           style={{margin: 0}}
         />
       </div>
     );
   }
 }
+
+CustomSlider.propTypes = {
+    updateSlider: React.PropTypes.func,
+    size: React.PropTypes.number.isRequired,
+};
