@@ -8,6 +8,7 @@ import RaisedButton from './RaisedButtonContainer';
 import PdfIcon from 'react-icons/lib/fa/file-pdf-o'
 import DistanceDescription from './distanceDescriptionContainer'
 import CustomGRaph from "./customGraphContainer";
+import SimpleBarChart from "./simpleBarChartComponent"
 
 export const Home = () =>
     <section className="container-fluid" style={{padding: 0, margin: 0}}>
@@ -234,9 +235,7 @@ export const Home = () =>
                 </div>
                 <div className="row" style={{margin: 0}}>
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" style={{padding: 0, marginRight: 16}}>
-
-                        <SimpleLineChart/>
-
+                        <SimpleBarChart/>
                     </div>
                 </div>
             </div>

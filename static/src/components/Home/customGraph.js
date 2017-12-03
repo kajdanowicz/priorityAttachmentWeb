@@ -34,7 +34,7 @@ const options = {
     };
 
 
-export default class CustomGRaph extends Component {
+export default class CustomGraph extends Component {
 
 
     render() {
@@ -50,6 +50,6 @@ export default class CustomGRaph extends Component {
     }
 }
 
-CustomGRaph.propTypes = {
+CustomGraph.propTypes = {
     network: React.PropTypes.object.isRequired,
 };
