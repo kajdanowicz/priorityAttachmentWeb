@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actionCreators from '../../actions/properties';
 
-import raisedButton from './RaisedButtonComponent';
+import customKSlider from './customKSlider';
 
 function mapStateToProps(state) {
     return {
-        distance: state.properties.distanceType,
-        size: state.properties.size,
-        k: state.properties.k,
+        k: state.properties.k
+
     };
 }
 
@@ -18,4 +17,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(raisedButton);
+export default connect(mapStateToProps, mapDispatchToProps)(customKSlider);

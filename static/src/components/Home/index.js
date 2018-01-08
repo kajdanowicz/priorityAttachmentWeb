@@ -8,7 +8,8 @@ import RaisedButton from './RaisedButtonContainer';
 import PdfIcon from 'react-icons/lib/fa/file-pdf-o'
 import DistanceDescription from './distanceDescriptionContainer'
 import CustomGRaph from "./customGraphContainer";
-import SimpleBarChart from "./simpleBarChartComponent"
+import SimpleBarChart from "./simpleBarChartContainer"
+import CustomKSlider from "./customKSliderContainer"
 
 export const Home = () =>
     <section className="container-fluid" style={{padding: 0, margin: 0}}>
@@ -143,12 +144,13 @@ export const Home = () =>
                     </div>
                     <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                         <div className="w3-content w3-container w3-padding-16 w3-left">
-                            <h3>Network size:</h3>
+                            <h3>Network parameters:</h3>
                         </div>
                     </div>
                     <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">
                         <div className="w3-content w3-container w3-center">
                             <CustomSlider/>
+                            <CustomKSlider/>
                         </div>
                     </div>
                 </div>
@@ -207,7 +209,6 @@ export const Home = () =>
             <div className="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                 <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        {/*<Graph graph={graph} options={options} events={events} style={{height: "600px"}}/>*/}
                         <CustomGRaph/>
                     </div>
                 </div>
@@ -215,27 +216,28 @@ export const Home = () =>
             <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div className="w3-content w3-container w3-padding-16 w3-left">
-                            Structural measures
+                        <div className="w3-content w3-container w3-padding-16 w3-left text-center">
+                            Distribution of structural measures
                         </div>
                     </div>
                 </div>
                 <div className="row" style={{margin: 0}}>
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" style={{padding: 0, marginRight: 16}}>
-
-                        <SimpleLineChart/>
+                        Degree
+                         <SimpleBarChart dataKey="degree"/>
                     </div>
                 </div>
                 <div className="row" style={{margin: 0}}>
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" style={{padding: 0, marginRight: 16}}>
-
-                        <SimpleLineChart/>
+                        Shortes paths lenghts
+                        <SimpleBarChart dataKey="paths"/>
 
                     </div>
                 </div>
                 <div className="row" style={{margin: 0}}>
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" style={{padding: 0, marginRight: 16}}>
-                        <SimpleBarChart/>
+                        Clustering coefficient
+                        <SimpleBarChart dataKey="clustering"/>
                     </div>
                 </div>
             </div>

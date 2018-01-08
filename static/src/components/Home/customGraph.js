@@ -21,13 +21,19 @@ const options = {
             improvedLayout: false
         },
         edges: {
-            color: "#000000",
+            color: "#777777",
             shadow: false,
             smooth: false
         },
         nodes: {
             shadow: true,
-            labelHighlightBold: true
+            labelHighlightBold: true,
+            color: {
+                border: "#777777",
+                background: "#00BCD4",
+                highlight: "333333"
+            },
+
         },
         autoResize: true
 

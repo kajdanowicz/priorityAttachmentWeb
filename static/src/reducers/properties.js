@@ -1,14 +1,18 @@
 import jwtDecode from 'jwt-decode';
 
 import { createReducer } from '../utils/misc';
-import {DISTANCE_TYPE_UPDATE, GENERATE_NETWORK_REQUEST, UPDATE_SLIDER_VALUE, GENERATE_NETWORK_SUCCESS, GENERATE_NETWORK_FAILURE} from '../constants/index';
+import {DISTANCE_TYPE_UPDATE, GENERATE_NETWORK_REQUEST, UPDATE_SLIDER_VALUE, UPDATE_K_SLIDER_VALUE, GENERATE_NETWORK_SUCCESS, GENERATE_NETWORK_FAILURE} from '../constants/index';
 
 const initialState = {
     distanceType: "random",
     size: 50,
+    k: 2,
     network:{},
     loading: false,
-    failed: true
+    failed: true,
+    degree: {},
+    paths: {},
+    chartData: {clustering:[], degree:[], paths:[]}
 };
 
 export default createReducer(initialState, {
@@ -24,7 +28,12 @@ export default createReducer(initialState, {
     },
     [GENERATE_NETWORK_SUCCESS]: (state, payload) =>{
         return Object.assign({}, state, {
-            network: payload.network,
+            network: payload.network.network,
+            chartData: {
+                degree: payload.network.degree,
+                paths: payload.network.paths,
+                clustering: payload.network.clustering
+            },
             loading: false,
             failed: false
         })
@@ -39,5 +48,9 @@ export default createReducer(initialState, {
     [UPDATE_SLIDER_VALUE]: (state, payload) =>
         Object.assign({}, state, {
             size: payload,
+        }),
+    [UPDATE_K_SLIDER_VALUE]: (state, payload) =>
+        Object.assign({}, state, {
+            k: payload,
         }),
 });

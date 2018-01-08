@@ -5,8 +5,12 @@ import {RaisedButton} from "material-ui";
 
 class RaisedButtonComponent extends React.Component {
 
-    updateState(event) {
-        this.props.generateNetworkRequest(this.props.size, this.props.distance)
+    componentDidMount() {
+        this.updateState()
+    }
+
+    updateState() {
+        this.props.generateNetworkRequest(this.props.size, this.props.distance, this.props.k)
     }
 
     render() {
@@ -16,10 +20,12 @@ class RaisedButtonComponent extends React.Component {
     }
 }
 
+
 RaisedButtonComponent.propTypes = {
     generateNetworkRequest: React.PropTypes.func,
     distance: React.PropTypes.string,
     size: React.PropTypes.number,
+    k: React.PropTypes.number,
 };
 
 export default RaisedButtonComponent;

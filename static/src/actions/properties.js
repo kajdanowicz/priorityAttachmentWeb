@@ -3,7 +3,8 @@ import {
     GENERATE_NETWORK_REQUEST,
     GENERATE_NETWORK_SUCCESS,
     GENERATE_NETWORK_FAILURE,
-    UPDATE_SLIDER_VALUE
+    UPDATE_SLIDER_VALUE,
+    UPDATE_K_SLIDER_VALUE
 } from '../constants/index';
 import {parseJSON} from "../utils/misc";
 import {generate_network} from "../utils/http_functions";
@@ -15,10 +16,10 @@ export function updateDistanceType(type) {
     };
 }
 
-export function generateNetworkRequest(size, distance) {
+export function generateNetworkRequest(size, distance, k) {
     return (dispatch) => {
-        dispatch(generateNetworkRequestState(size,distance));
-        return generate_network(size, distance)
+        dispatch(generateNetworkRequestState(size, distance, k));
+        return generate_network(size, distance, k)
             .then(parseJSON)
             .then(response => {
                     try {
@@ -33,17 +34,36 @@ export function generateNetworkRequest(size, distance) {
                         }));
                     }
                 }
-            );
+            )
+            .catch(error => {
+                console.log(error)
+                dispatch(serverUnreachable({
+                    response: {
+                        status: 403,
+                        statusText: 'Server unreachable.',
+                    },
+                }));
+            });
     }
 }
 
+export function serverUnreachable(error) {
+    return {
+        type: GENERATE_NETWORK_FAILURE,
+        payload: {
+            status: error.response.status,
+            statusText: error.response.statusText,
+        }
+    };
+}
 
-export function generateNetworkRequestState(size, distance) {
+export function generateNetworkRequestState(size, distance, k) {
     return {
         type: GENERATE_NETWORK_REQUEST,
         payload: {
             size: size,
             distance: distance,
+            k: k,
         }
     };
 }
@@ -74,5 +94,12 @@ export function updateSlider(size) {
     return {
         type: UPDATE_SLIDER_VALUE,
         payload: size,
+    };
+}
+
+export function updateKSlider(k) {
+    return {
+        type: UPDATE_K_SLIDER_VALUE,
+        payload: k,
     };
 }

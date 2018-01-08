@@ -56,7 +56,7 @@
     "eslint-plugin-react": "^6.1.2",
     "expect": "^1.13.4",
     "exports-loader": "^0.6.2",
-    "expose-loader": "^0.7.1",
+    "expose-loader": "^0.7.4",
     "express": "^4.13.4",
     "express-open-in-editor": "^1.1.0",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -86,7 +86,7 @@
     "rc-datepicker": "^4.0.1",
     "react": "^15.3.1",
     "react-addons-css-transition-group": "^15.3.1",
-    "react-calendar-component": "^1.0.0",
+    "react-calendar-component": "^1.3.0",
     "react-date-picker": "^5.3.28",
     "react-datepicker": "^0.37.0",
     "react-document-meta": "^2.0.0-rc2",
@@ -110,17 +110,17 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.11",
-    "webpack-dev-middleware": "^1.5.0",
+    "webpack-dev-middleware": "^1.12.2",
     "webpack-dev-server": "^1.14.1",
-    "webpack-hot-middleware": "^2.6.0",
+    "webpack-hot-middleware": "^2.21.0",
     "webpack-merge": "^1.0.2",
     "yargs": "^6.5.0"
   },
   "dependencies": {
     "react-graph-vis": "^1.0.2",
-    "recharts": "",
     "react-heatmap": "",
     "react-icons": "",
-    "react-tex": "1.3.0"
+    "react-tex": "1.3.0",
+    "recharts": "^1.0.0-beta.7"
   }
 }

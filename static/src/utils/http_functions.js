@@ -43,6 +43,6 @@ export function data_about_user(token) {
     return axios.get('api/user', tokenConfig(token));
 }
 
-export function generate_network(size, distance) {
-    return axios.post('api/generateNetwork', {size, distance})
+export function generate_network(size, distance, k) {
+    return axios.post('api/generateNetwork', {size, distance, k})
 }

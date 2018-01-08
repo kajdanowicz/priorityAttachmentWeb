@@ -68,5 +68,13 @@ def is_token_valid():
 def generateNetwork():
     incoming = request.get_json()
 
-    net = Network(size=incoming['size'], distance=incoming['distance'])
-    return jsonify(net.getNetwork())
+    print(incoming)
+
+    net = Network(size=incoming['size'], distance=incoming['distance'], k=incoming['k'])
+    ret = {
+        'network': net.getNetwork(),
+        'degree': net.getDegreeDistr(),
+        'paths': net.getShortestPathDist(),
+        'clustering': net.getClusteringCoeffDist()
+    }
+    return jsonify(ret)

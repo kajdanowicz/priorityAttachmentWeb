@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Slider from 'material-ui/Slider';
 
 const min = 10;
-const max = 1000;
+const max = 500;
 
 
 export default class CustomSlider extends Component {
@@ -14,7 +14,7 @@ export default class CustomSlider extends Component {
   render() {
     return (
       <div>
-        <span>{this.props.size}</span>
+        <span>Network size: {this.props.size}</span>
         <Slider
           min={min}
           max={max}
