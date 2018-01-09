@@ -214,13 +214,13 @@ body, html {
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-    background-image: url("../../img/6359.jpg");
+    background-image: url("../../img/6359_2.jpg");
     min-height: 400px;
 }
 
 /* Third image (Contact) */
 .bgimg-3 {
-    background-image: url("../../img/6359.jpg");
+    background-image: url("../../img/6359_2.jpg");
     min-height: 400px;
 }
 
@@ -248,14 +248,26 @@ body, html {
      color: #00BCD4;
  }
 
-
+ .fa.fa-snowflake-o{
+     font-size: 60px;
+     color: #00BCD4;
+ }
 
  .txt-sm-center{
       @media screen and (max-width: 480px) {
           text-align: center;
-          .w3-right, .w3-left{
+          .w3-right{
               float: none !important;
               display: inline-block;
           }
       }
+ }
+ .network{
+    background-image: url("../../img/network.jpg");
+    height: 140px;
+    width: 140px;
+    display: inline-block;
+    margin-top: -45px;
+    background-size: contain;
+    background-repeat: no-repeat;
  }

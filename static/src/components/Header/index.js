@@ -105,14 +105,12 @@ export class Header extends Component {
                             <i className="fa fa-bars"></i>
                         </a>
                         <a href="#home" className="w3-bar-item w3-button">PRIORITY ATTACHMENT</a>
-                        <a href="#what" className="w3-bar-item w3-button w3-hide-small"><i className="fa fa-cog"></i>
-                            ABOUT</a>
-                        <a href="#how" className="w3-bar-item w3-button w3-hide-small"><i className="fa fa-file-text-o"></i>
+                        <a href="#what" className="w3-bar-item w3-button w3-hide-small"><i className="fa fa-file-text-o"></i>
                             DESCRIPTION</a>
                         <a href="#demo" className="w3-bar-item w3-button w3-hide-small"><i className="fa fa-line-chart"></i>
                             DEMO</a>
-                        <a href="#contact" className="w3-bar-item w3-button w3-hide-small"><i className="fa fa-envelope"></i>
-                            CONTACT</a>
+                        <a href="#publication" className="w3-bar-item w3-button w3-hide-small"><i className="fa fa-envelope"></i>
+                            PUBLICATION</a>
                     </div>
 
 

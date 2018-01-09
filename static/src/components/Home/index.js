@@ -85,7 +85,7 @@ export const Home = () =>
                 <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
                     <div className="w3-content w3-container w3-padding-8">
                         <p>
-                            <span className="fa fa-list-ol"></span>
+                            <span className="network"></span>
                         </p>
                     </div>
                 </div>
@@ -93,7 +93,10 @@ export const Home = () =>
             <div className="row">
                 <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
                     <div className="w3-content w3-container w3-padding-32">
-                        <h4>Distances</h4>
+                        <span><h4>Distances</h4></span>
+                        <span>each vertex computes its distance to all other vertices
+using some distance function</span>
+
                     </div>
                 </div>
                 <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-center">
@@ -105,7 +108,9 @@ export const Home = () =>
                 </div>
                 <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
                     <div className="w3-content w3-container w3-padding-32">
-                        <h4>Rankings</h4>
+                        <span><h4>Rankings</h4></span>
+                        <span>distances define local rankings of priority which show
+which vertices are "important" from the point of view of a vertex</span>
                     </div>
                 </div>
                 <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-center">
@@ -117,7 +122,9 @@ export const Home = () =>
                 </div>
                 <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
                     <div className="w3-content w3-container w3-padding-32">
-                        <h4>Network</h4>
+                        <span><h4>Network</h4></span>
+                        <span>when a vertex creates edges, it selects target vertices
+with the probability proportional to their position in the local ranking</span>
                     </div>
                 </div>
             </div>
@@ -190,93 +197,6 @@ export const Home = () =>
                 </div>
             </div>
          </div>
-
-
-
-
-            {/*<div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">*/}
-                {/*<div className="row">*/}
-                    {/*<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">*/}
-                        {/*<h4>Preview distances</h4>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
-                {/*<div className="row">*/}
-                    {/*<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">*/}
-                        {/*<DistanceDescription/>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
-            {/*</div>*/}
-        {/*</div>*/}
-
-        {/*<div className="row">*/}
-            {/*<div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">*/}
-                {/*<div className="row">*/}
-                    {/*<div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">*/}
-                        {/*<div className="w3-content w3-container w3-padding-16 w3-right">*/}
-                            {/*<div className="numberCircle">1</div>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                    {/*<div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">*/}
-                        {/*<div className="w3-content w3-container w3-padding-16 w3-left">*/}
-                            {/*<h3>Network parameters:</h3>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                    {/*<div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">*/}
-                        {/*<div className="w3-content w3-container w3-center">*/}
-                            {/*<CustomSlider/>*/}
-                            {/*<CustomKSlider/>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
-                {/*<div className="row">*/}
-                    {/*<div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">*/}
-                        {/*<div className="w3-content w3-container w3-padding-16 w3-right">*/}
-                            {/*<div className="numberCircle">2</div>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                    {/*<div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">*/}
-                        {/*<div className="w3-content w3-container w3-padding-16 w3-left">*/}
-                            {/*<h3>Distance:</h3>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                    {/*<div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">*/}
-                        {/*<div className="w3-content w3-container w3-left w3-padding-0">*/}
-                            {/*<DropDownDistanceMenu/>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
-                {/*<div className="row">*/}
-                    {/*<div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">*/}
-                        {/*<div className="w3-content w3-container w3-padding-16 w3-right">*/}
-                            {/*<div className="numberCircle">3</div>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                    {/*<div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">*/}
-                        {/*<div className="w3-content w3-container w3-padding-16 w3-left">*/}
-                            {/*<h3>Run:</h3>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                    {/*<div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">*/}
-                        {/*<div className="w3-content w3-container w3-padding-16 w3-left">*/}
-                            {/*<RaisedButton label="Generate graph" primary={true} disabled={true}/> <CustomCircularProgress visible={true}/>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
-            {/*</div>*/}
-            {/*<div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">*/}
-                {/*<div className="row">*/}
-                    {/*<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">*/}
-                        {/*<h4>Preview distances</h4>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
-                {/*<div className="row">*/}
-                    {/*<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">*/}
-                        {/*<DistanceDescription/>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
-            {/*</div>*/}
-        {/*</div>*/}
-
         <div className="row bg-grey text-center media-middle">
             <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                 {/*<div className="row text-center ">*/}
@@ -315,15 +235,17 @@ export const Home = () =>
             </div>
         </div>
         <div className="container-fluid">
-            <div className="row">
+            <div className="row" id="publication">
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="w3-content w3-container w3-padding-64 w3-center">
                         <h3>PUBLICATION</h3>
                         <PdfIcon/>
-                        <p className="w3-center"> Mikołaj Morzy, Tomasz Kajdanowicz, Przemysław Kazienko, Grzegorz
-                            Miebs,
+
+                        <p className="w3-center"> <a href="mailto:Mikolaj.Morzy@put.poznan.pl">Mikołaj Morzy</a>,
+                            <a href="mailto:tomasz.kajdanowicz@pwr.edu.pl">Tomasz Kajdanowicz</a>,
+                            <a href="mailto:przemyslaw.kazienko@pwr.edu.pl">Przemysław Kazienko</a>,Grzegorz Miebs,
                             and Arkadiusz Rusin, <em>Priority Attachment: a Universal Mechanism for Generating
-                                Networks</em>, in preparation, 2017</p>
+                                Networks</em>, submitted, 2017</p>
                     </div>
                 </div>
             </div>
