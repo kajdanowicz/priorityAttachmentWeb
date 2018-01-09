@@ -10,6 +10,10 @@ import DistanceDescription from './distanceDescriptionContainer'
 import CustomGRaph from "./customGraphContainer";
 import SimpleBarChart from "./simpleBarChartContainer"
 import CustomKSlider from "./customKSliderContainer"
+import CustomCircularProgress from "./customCircularProgressContainer";
+
+// React.render(<Graph graph={graph} options={options} events={events} />, document.body);
+
 
 export const Home = () =>
     <section className="container-fluid" style={{padding: 0, margin: 0}}>
@@ -134,86 +138,154 @@ export const Home = () =>
             </div>
         </div>
 
+         <div className="row">
+            <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2 txt-sm-center">
+                <div className="w3-content w3-container w3-padding-16 w3-right">
+                    <div className="numberCircle">1</div>
+                </div>
+            </div>
+            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3  txt-sm-center">
+                <div className="w3-content w3-container w3-padding-16 w3-left">
+                    <h3>Network parameters:</h3>
+                </div>
+            </div>
+            <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2 ">
+                <div className="w3-content w3-container w3-center">
+                    <CustomSlider/>
+                    <CustomKSlider/>
+                </div>
+            </div>
+         </div>
+         <div className="row">
+            <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2 txt-sm-center ">
+                <div className="w3-content w3-container w3-padding-16 w3-right">
+                    <div className="numberCircle">2</div>
+                </div>
+            </div>
+            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3  txt-sm-center">
+                <div className="w3-content w3-container w3-padding-16 w3-left">
+                    <h3>Distance:</h3>
+                </div>
+            </div>
+            <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2 txt-sm-center ">
+                <div className="w3-content w3-container w3-left w3-padding-0">
+                    <DropDownDistanceMenu/>
+                </div>
+            </div>
+         </div>
         <div className="row">
-            <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <div className="row">
-                    <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <div className="w3-content w3-container w3-padding-16 w3-right">
-                            <div className="numberCircle">1</div>
-                        </div>
-                    </div>
-                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <div className="w3-content w3-container w3-padding-16 w3-left">
-                            <h3>Network parameters:</h3>
-                        </div>
-                    </div>
-                    <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">
-                        <div className="w3-content w3-container w3-center">
-                            <CustomSlider/>
-                            <CustomKSlider/>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <div className="w3-content w3-container w3-padding-16 w3-right">
-                            <div className="numberCircle">2</div>
-                        </div>
-                    </div>
-                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <div className="w3-content w3-container w3-padding-16 w3-left">
-                            <h3>Distance:</h3>
-                        </div>
-                    </div>
-                    <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">
-                        <div className="w3-content w3-container w3-left w3-padding-0">
-                            <DropDownDistanceMenu/>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <div className="w3-content w3-container w3-padding-16 w3-right">
-                            <div className="numberCircle">3</div>
-                        </div>
-                    </div>
-                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <div className="w3-content w3-container w3-padding-16 w3-left">
-                            <h3>Run:</h3>
-                        </div>
-                    </div>
-                    <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">
-                        <div className="w3-content w3-container w3-padding-16 w3-left">
-                            <RaisedButton label="Generate graph" primary={true}/>
-                        </div>
-                    </div>
+            <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2  txt-sm-center">
+                <div className="w3-content w3-container w3-padding-16 w3-right">
+                    <div className="numberCircle">3</div>
                 </div>
             </div>
-            <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <div className="row">
-                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <h4>Preview distances</h4>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <DistanceDescription/>
-                        {/*<Tex texContent={"\\frac{1}{C_D(v_j) + \\epsilon}"}/>*/}
-                        {/*<InlineMath math="\\frac{1}{C_D(v_j) + \\epsilon}" />*/}
-                    </div>
+            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3  txt-sm-center">
+                <div className="w3-content w3-container w3-padding-16 w3-left">
+                    <h3>Run:</h3>
                 </div>
             </div>
-        </div>
+            <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2 txt-sm-center ">
+                <div className="w3-content w3-container w3-padding-16 w3-left">
+                    <RaisedButton label="Generate graph" primary={true} disabled={true}/> <CustomCircularProgress visible={true}/>
+                </div>
+            </div>
+         </div>
 
-        <div className="row bg-grey">
-            <div className="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                <div className="row">
-                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+
+            {/*<div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">*/}
+                {/*<div className="row">*/}
+                    {/*<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">*/}
+                        {/*<h4>Preview distances</h4>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+                {/*<div className="row">*/}
+                    {/*<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">*/}
+                        {/*<DistanceDescription/>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+            {/*</div>*/}
+        {/*</div>*/}
+
+        {/*<div className="row">*/}
+            {/*<div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">*/}
+                {/*<div className="row">*/}
+                    {/*<div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">*/}
+                        {/*<div className="w3-content w3-container w3-padding-16 w3-right">*/}
+                            {/*<div className="numberCircle">1</div>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                    {/*<div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">*/}
+                        {/*<div className="w3-content w3-container w3-padding-16 w3-left">*/}
+                            {/*<h3>Network parameters:</h3>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                    {/*<div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">*/}
+                        {/*<div className="w3-content w3-container w3-center">*/}
+                            {/*<CustomSlider/>*/}
+                            {/*<CustomKSlider/>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+                {/*<div className="row">*/}
+                    {/*<div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">*/}
+                        {/*<div className="w3-content w3-container w3-padding-16 w3-right">*/}
+                            {/*<div className="numberCircle">2</div>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                    {/*<div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">*/}
+                        {/*<div className="w3-content w3-container w3-padding-16 w3-left">*/}
+                            {/*<h3>Distance:</h3>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                    {/*<div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">*/}
+                        {/*<div className="w3-content w3-container w3-left w3-padding-0">*/}
+                            {/*<DropDownDistanceMenu/>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+                {/*<div className="row">*/}
+                    {/*<div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">*/}
+                        {/*<div className="w3-content w3-container w3-padding-16 w3-right">*/}
+                            {/*<div className="numberCircle">3</div>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                    {/*<div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">*/}
+                        {/*<div className="w3-content w3-container w3-padding-16 w3-left">*/}
+                            {/*<h3>Run:</h3>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                    {/*<div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">*/}
+                        {/*<div className="w3-content w3-container w3-padding-16 w3-left">*/}
+                            {/*<RaisedButton label="Generate graph" primary={true} disabled={true}/> <CustomCircularProgress visible={true}/>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+            {/*</div>*/}
+            {/*<div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">*/}
+                {/*<div className="row">*/}
+                    {/*<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">*/}
+                        {/*<h4>Preview distances</h4>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+                {/*<div className="row">*/}
+                    {/*<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">*/}
+                        {/*<DistanceDescription/>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+            {/*</div>*/}
+        {/*</div>*/}
+
+        <div className="row bg-grey text-center media-middle">
+            <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                {/*<div className="row text-center ">*/}
+                    {/*<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">*/}
                         <CustomGRaph/>
-                    </div>
-                </div>
+                    {/*</div>*/}
+                {/*</div>*/}
             </div>
-            <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div className="w3-content w3-container w3-padding-16 w3-left text-center">
@@ -224,7 +296,7 @@ export const Home = () =>
                 <div className="row" style={{margin: 0}}>
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" style={{padding: 0, marginRight: 16}}>
                         Degree
-                         <SimpleBarChart dataKey="degree"/>
+                        <SimpleBarChart dataKey="degree"/>
                     </div>
                 </div>
                 <div className="row" style={{margin: 0}}>
@@ -274,7 +346,4 @@ export const Home = () =>
             </div>
         </div>
     </section>;
-
-
-// React.render(<Graph graph={graph} options={options} events={events} />, document.body);
 

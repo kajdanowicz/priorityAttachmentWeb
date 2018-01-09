@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Slider from 'material-ui/Slider';
 
 const min = 10;
-const max = 500;
+const max = 100;
 
 
 export default class CustomSlider extends Component {

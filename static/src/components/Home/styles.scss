@@ -248,3 +248,14 @@ body, html {
      color: #00BCD4;
  }
 
+
+
+ .txt-sm-center{
+      @media screen and (max-width: 480px) {
+          text-align: center;
+          .w3-right, .w3-left{
+              float: none !important;
+              display: inline-block;
+          }
+      }
+ }

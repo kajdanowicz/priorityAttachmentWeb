@@ -1,35 +1,31 @@
 import React, {Component} from 'react';
-import Slider from 'material-ui/Slider';
+import CircularProgress from 'material-ui/CircularProgress';
 
 const min = 1;
 const max = 5;
 
 
-export default class CustomKSlider extends Component {
+export default class CustomCircularProgress extends Component {
 
-  handleSlider(event, value){
-    this.props.updateKSlider(value)
-  };
+    handleSlider(event, value) {
+        this.props.updateCircularProgress(value)
+    };
 
-  render() {
-    return (
-      <div>
-        <span>Number of edges each vertex creates: {this.props.k}</span>
-        <Slider
-          min={min}
-          max={max}
-          step={1}
-          value={this.props.k}
-          defaultValue={2}
-          onChange={this.handleSlider.bind(this)}
-          style={{margin: 0}}
-        />
-      </div>
-    );
-  }
+    render() {
+        if (this.props.visible == true) {
+            return (
+                <div>
+                    <CircularProgress mode="indeterminate" size = {30} thickness = {4} />
+                </div>);
+        } else {
+            return (
+                <span></span>
+            );
+        }
+    }
 }
 
-CustomKSlider.propTypes = {
-    updateKSlider: React.PropTypes.func,
-    k: React.PropTypes.number.isRequired,
+CustomCircularProgress.propTypes = {
+    updateCircularProgress: React.PropTypes.func,
+    visible: React.PropTypes.bool.isRequired,
 };

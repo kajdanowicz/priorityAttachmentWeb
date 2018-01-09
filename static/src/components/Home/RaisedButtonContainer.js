@@ -10,6 +10,7 @@ function mapStateToProps(state) {
         distance: state.properties.distanceType,
         size: state.properties.size,
         k: state.properties.k,
+        disabled: state.properties.loading,
     };
 }
 

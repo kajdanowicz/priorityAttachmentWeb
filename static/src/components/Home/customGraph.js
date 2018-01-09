@@ -11,7 +11,8 @@ const events = {
 const options = {
         physics: {
             enabled: true,
-            solver: 'hierarchicalRepulsion',
+            solver: 'forceAtlas2Based',
+            // solver: 'hierarchicalRepulsion',
             stabilization: {
                 iterations: 100
             }
@@ -49,7 +50,7 @@ export default class CustomGraph extends Component {
         } else {
             return (
                 <div>
-                    <Graph graph={this.props.network} options={options} events={events} style={{height: "600px"}}/>
+                    <Graph graph={this.props.network} options={options} events={events} style={{height: "710px"}}/>
                 </div>
             );
         }

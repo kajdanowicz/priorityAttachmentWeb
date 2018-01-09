@@ -1,14 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import customGraph from './customGraph'
+import customCircularProgress from './customCircularProgress'
 
 function mapStateToProps(state) {
 
     return {
-        network: state.properties.network
+        visible: state.properties.loading
     };
 }
 
-
-export default connect(mapStateToProps)(customGraph);
+export default connect(mapStateToProps)(customCircularProgress);

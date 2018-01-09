@@ -1,30 +1,31 @@
 from index import db, bcrypt
 import networkx as nx
 import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
 from collections import Counter
 import operator
 
-class User(db.Model):
-    id = db.Column(db.Integer(), primary_key=True)
-    email = db.Column(db.String(255), unique=True)
-    password = db.Column(db.String(255))
-
-    def __init__(self, email, password):
-        self.email = email
-        self.active = True
-        self.password = User.hashed_password(password)
-
-    @staticmethod
-    def hashed_password(password):
-        return bcrypt.generate_password_hash(password)
-
-    @staticmethod
-    def get_user_with_email_and_password(email, password):
-        user = User.query.filter_by(email=email).first()
-        if user and bcrypt.check_password_hash(user.password, password):
-            return user
-        else:
-            return None
+# class User(db.Model):
+#     id = db.Column(db.Integer(), primary_key=True)
+#     email = db.Column(db.String(255), unique=True)
+#     password = db.Column(db.String(255))
+#
+#     def __init__(self, email, password):
+#         self.email = email
+#         self.active = True
+#         self.password = User.hashed_password(password)
+#
+#     @staticmethod
+#     def hashed_password(password):
+#         return bcrypt.generate_password_hash(password)
+#
+#     @staticmethod
+#     def get_user_with_email_and_password(email, password):
+#         user = User.query.filter_by(email=email).first()
+#         if user and bcrypt.check_password_hash(user.password, password):
+#             return user
+#         else:
+#             return None
 
 
 class Network1:
@@ -125,6 +126,8 @@ class Network:
     size = 10
     distance = 'random'
     k = 1
+    attr1 = None
+    attr2 = None
 
     def getProbabilityOfRanking(self, size):
         prob = [1 / (sum([1 / float(k) for k in range(1, size)]) * i) for i in range(1, size)]
@@ -148,6 +151,9 @@ class Network:
         #         self.g.add_edges_from(self.generateEdges(
         #             self.sampleFromRankMat(self.generateRankings(self.generateDistanceMatrix(size, distance)), k,
         #                                    size), size))
+        self.attr1 = np.random.randint(0, 255, size)
+        self.attr2 = np.random.randint(0, 255, size)
+        # self.attr3 = np.random.randint(0, 255, size)
         self.generateIterativelyEdges()
 
     def getNetwork(self):
@@ -209,6 +215,22 @@ class Network:
         elif (distance == 'page_rank'):
             pag=nx.pagerank_scipy(self.g)
             result = 1 / (pag[node_j] + 0.001)
+        elif (distance == 'cosine'):
+            result = 1-cosine_similarity(np.array([self.attr1[node_i],self.attr2[node_i]]).reshape(1, -1),
+                                         np.array([self.attr1[node_j],self.attr2[node_j]]).reshape(1, -1));
+            # print(self.attr1[node_i], self.attr1[node_j],result)
+        elif (distance == 'euclidean_1'):
+            result = np.abs(self.attr1[node_i]-self.attr1[node_j]);
+            # print(self.attr1[node_i], self.attr1[node_j],result)
+        elif (distance == 'euclidean_2'):
+            result = np.sqrt(np.power(self.attr1[node_i]-self.attr1[node_j], 2)+np.power(self.attr2[node_i]-self.attr2[node_j], 2));
+            # print(self.attr1[node_i], self.attr1[node_j], result)
+        elif (distance == 'aggregate'):
+            w1=0.7
+            w2=0.3
+            result = w1*np.abs(self.attr1[node_i] - self.attr1[node_j])+w2*np.abs(self.attr2[node_i] - self.attr2[node_j]);
+            # print(self.attr1[node_i], self.attr1[node_j], result)
+
         return result
 
     def getRandomNode(self):

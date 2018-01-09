@@ -15,7 +15,7 @@ class RaisedButtonComponent extends React.Component {
 
     render() {
         return (
-            <RaisedButton label="Generate graph" primary={true} onClick={this.updateState.bind(this)}/>
+            <RaisedButton label="Generate graph" primary={true} onClick={this.updateState.bind(this)} disabled={this.props.disabled}/>
         );
     }
 }
@@ -26,6 +26,7 @@ RaisedButtonComponent.propTypes = {
     distance: React.PropTypes.string,
     size: React.PropTypes.number,
     k: React.PropTypes.number,
+    disabled:React.PropTypes.bool,
 };
 
 export default RaisedButtonComponent;
