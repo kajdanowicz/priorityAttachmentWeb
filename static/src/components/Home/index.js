@@ -22,7 +22,11 @@ export const Home = () =>
                 <div className="w3-display-middle">
                     <span className="w3-center w3-black w3-padding-large w3-xlarge w3-wide w3-animate-opacity">PRIORITY</span>
                     <span className="w3-center w3-white w3-padding-large w3-xlarge w3-wide w3-animate-opacity">ATTACHMENT</span>
-                    
+                    <span className="w3-padding-large"><br></br></span>
+                    <span className="w3-center w3-grey w3-padding-large w3-medium w3-animate-opacity">
+                        <PdfIcon/>
+                        <a href="https://arxiv.org/abs/1801.03327">arXiv:1801.03327</a>
+                    </span>
                 </div>
             </div>
         </div>
@@ -241,7 +245,7 @@ with the probability proportional to their position in the local ranking</span>
                     <div className="w3-content w3-container w3-padding-64 w3-center">
                         <h3>PUBLICATION</h3>
                         <PdfIcon/>
-
+                        <a href="https://arxiv.org/abs/1801.03327">arXiv:1801.03327</a>
                         <p className="w3-center"> <a href="mailto:Mikolaj.Morzy@put.poznan.pl">Mikołaj Morzy</a>,
                             <a href="mailto:tomasz.kajdanowicz@pwr.edu.pl">Tomasz Kajdanowicz</a>,
                             <a href="mailto:przemyslaw.kazienko@pwr.edu.pl">Przemysław Kazienko</a>,Grzegorz Miebs,
