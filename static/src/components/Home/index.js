@@ -20,8 +20,9 @@ export const Home = () =>
         <div>
             <div className="bgimg-1 w3-display-container w3-opacity-min" id="home">
                 <div className="w3-display-middle">
-                    <span className="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">PRIORITY <span
-                        className="w3-hide-small">ATTACHMENT</span></span>
+                    <span className="w3-center w3-black w3-padding-large w3-xlarge w3-wide w3-animate-opacity">PRIORITY</span>
+                    <span className="w3-center w3-white w3-padding-large w3-xlarge w3-wide w3-animate-opacity">ATTACHMENT</span>
+                    
                 </div>
             </div>
         </div>
@@ -91,7 +92,7 @@ export const Home = () =>
                 </div>
             </div>
             <div className="row">
-                <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
+                <div className="col-xs-3 col-sm-3 col-mted-3 col-lg-3 text-center">
                     <div className="w3-content w3-container w3-padding-32">
                         <span><h4>Distances</h4></span>
                         <span>each vertex computes its distance to all other vertices
