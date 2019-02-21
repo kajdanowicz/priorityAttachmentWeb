@@ -249,8 +249,8 @@ with the probability proportional to their position in the local ranking</span>
                         <p className="w3-center"> <a href="mailto:Mikolaj.Morzy@put.poznan.pl">Mikołaj Morzy</a>,
                             <a href="mailto:tomasz.kajdanowicz@pwr.edu.pl">Tomasz Kajdanowicz</a>,
                             <a href="mailto:przemyslaw.kazienko@pwr.edu.pl">Przemysław Kazienko</a>,Grzegorz Miebs,
-                            and Arkadiusz Rusin, <em>Priority Attachment: a Universal Mechanism for Generating
-                                Networks</em>, submitted, 2017</p>
+                            and Arkadiusz Rusin, <em>Priority Attachment: a Comprehensive Mechanism for Generating
+                                Networks</em>, Scientific Report, 2019, in press</p>
                     </div>
                 </div>
             </div>
